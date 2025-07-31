@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="/js/calendario.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/calendario.css">
+        <link rel="stylesheet" href="css/footer.css">
+
+        <title>Sundown Park - Verão todo dia!</title>
+        <link rel="icon" type="image/png" href="./assets/imgs/logo.png">
+
+    </head>
+
+    <body>
+
+        <header>
+                <nav id="menu">
+                    <img id="logo-header" src="./assets/imgs/logo_laranja.png" alt="logo-sundown">
+                    <ul id="lista-menu">
+                        <li><a class="anim-linha" href="/home">Home</a></li>
+                        <li class="divisao" >|</li>
+                        <li><a class="anim-linha" href="/ingressos">Ingressos</a></li>
+                        <li class="divisao" >|</li>
+                        <li><a class="anim-linha" href="/atracoes">Atrações</a></li>
+                        <li class="divisao" >|</li>
+                        <li><a class="anim-linha" href="/calendario">Calendário</a></li>
+                        <li class="divisao" >|</li>
+                        <li><a class="anim-linha" href="/home#secao-sobre">Sobre nós</a></li>
+                        <li class="divisao" >|</li>
+                        <div id="app-section">
+                            <p>Baixe nosso App</p>
+                            <div>
+                                <a href="#"><img class="aumentar" src="./assets/icons/apple-store.png" alt=""></a>
+                                <a href="#"><img class="aumentar" src="./assets/icons/google-play.png" alt=""></a>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+                <div id="icons-menu">
+                    <a href="./compra"><button id="botao-comprar" type="button">Comprar Ingressos</button></a>
+                    <a href=""><img class="aumentar" src="assets/icons/conta.svg" alt=""></a>
+                </div>
+        </header>
+
+        <main>
+            <div id="calendarioTitulo">
+                <img src="./assets/icons/calendario.svg" alt="">
+                <h1 id="calendarioH1"> CALENDÁRIO </h1>
+                
+            </div>
+            <div id="calendario"></div>
+        </main>
+
+        <footer>
+            <nav id="nav-rodape">
+                <ol class="lista-pai">  
+                    <ol class="lista-filho"> 
+                        <li class="titulo-lista">Parque</li>
+                        <li><a class="texto-bold" href="/ingressos">Ingressos</a></li> 
+                        <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                        <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                    </ol>
+                    <ol class="lista-filho"> 
+                        <li class="titulo-lista">Conteúdo</li>
+                        <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                    </ol>
+                    <ol class="lista-filho">
+                        <li class="titulo-lista">Dúvidas</li>
+                        <li><a class="texto-bold" href="#">Dúvidas Frequentes</a></li>
+                        <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                        <li><a class="texto-bold" href="#">Como Chegar</a></li> 
+                    </ol>
+                    <ol class="lista-filho"> 
+                        <li class="titulo-lista">Contato</li>
+                        <li><a class="texto-bold" href="#">Endereço</a></li>
+                        <li><a class="texto-bold" href="#">Trabalhe Conosco</a></li> 
+                        <li><a class="texto-bold" href="#">Seja Fornecedor</a></li>
+                    </ol>
+                </ol>
+                <div>
+                    <img id="logo-footer" src="./assets/imgs/logo_azul.png" alt="logo-sundown">
+                </div>
+            </nav>
+            <container>
+                <div class="linha-horizontal"></div>
+                <div id="div-icones">
+                    <p>Sundown Park - Parque Aquático @ 2025 / Todos os direitos reservados 06.237.380/0001-69</p>
+                    <a class="texto-bold" href="#">Política de Privacidade</a>
+                    <ul id="lista-redes-sociais">
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/insta.png" alt="Instagram"></a></li>
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/face.png" alt="Facebook"></a></li>
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/wpp.png" alt="WhatsApp"></a></li>
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/youtube.png" alt="Youtube"></a></li>
+                    </ul>
+                </div>
+            </container>
+        </footer>
+
+    </body>
+
+</html>

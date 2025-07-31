@@ -1,0 +1,247 @@
+main{
+    height: auto;
+}
+
+#banner-sundown{ 
+    display: block;
+    padding-top: 90px;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+#secao-produtos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    height: 650px;
+    padding-bottom: 50px;
+}
+
+#secao-produtos h1{
+    font-size:xx-large;
+    font-weight: bold;
+    color: var(--cor-menu);
+}
+
+#produtos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    
+    width: 90%;
+}
+
+.produto{
+    height: 450px;
+    width: 300px;
+    overflow: hidden;
+
+    border-radius: 12px;
+    
+    background-color: var(--cor-background);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.produto img{
+    display: block;
+    height: 300px;
+}
+
+.texto-produto{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 140px;
+    padding: 10px;
+    color: var(--cor-menu);
+}
+
+.saiba-mais{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    
+    padding: 14px 10px;
+
+    border: 2px var(--cor-menu) solid;
+    border-radius: 20px;
+
+    background-color: var(--cor-background);
+    color: var(--cor-menu);
+    
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.saiba-mais:hover{
+    transform: scale(1.01);
+    color: var(--cor-background);
+    background-color: var(--cor-menu);
+    border: 2px var(--cor-menu) solid;
+}
+
+#secao-atracoes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    padding-bottom: 50px;
+
+    height: 650px;
+    background-color: var(--cor-footer);
+}
+
+#secao-atracoes h1{
+    font-size:xx-large;
+    font-weight: bold;
+    color: var(--cor-background);
+}
+
+#conteudo-atracoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    height: 400px;
+    width: 1200px;
+    border-radius: 12px;
+    background-color: var(--cor-background);
+}
+
+#texto-atracoes{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    height: 400px;
+    width: 700px;
+    padding: 40px;
+}
+
+#texto-atracoes h2 {
+    font-size: xx-large;
+    color: var(--cor-footer);
+}
+
+#texto-atracoes p{
+    font-size: larger   ;
+}
+
+#texto-atracoes .saiba-mais{
+    font-size: 20px;
+}
+
+#imagem-atracoes{
+    height: 400px;
+    width: 500px;
+    overflow: hidden;
+}
+
+#imagem-atracoes img{
+    display: block;
+    height: 400px;
+}
+
+#secao-sobre{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    height: 850px;
+    padding-bottom: 50px;
+
+    background-color: var(--cor-menu);
+}
+
+#secao-sobre h1{
+    font-size: xx-large;
+    color: white;
+}
+
+#conteudo-sobre{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+
+    height: 700px;
+}
+
+#imagem-sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 700px;
+    width: 500px;
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#imagem-sobre img{
+    display: block;
+    height: 800px;
+}
+
+#texto-sobre{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    height: 700px;
+    width: 600px;
+
+    padding: 20px;
+
+    border: 2px white solid;  
+    border-radius: 12px;
+
+    font-size: larger;
+    color:white;
+}
+
+#texto-sobre h2{
+    font-size: x-large;
+    text-align: center;
+}
+
+#texto-sobre .saiba-mais{
+    width: 500px;
+    font-size: 20px;
+}
+
+#texto-sobre .saiba-mais:hover{
+    border: 2px white solid;
+}
+
+#marca-temporal h2{
+    font-size: medium;
+}
+#marca-temporal p{
+    font-size: medium;
+}
+
+#chamada{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+#chamada p{
+    font-size: larger;
+    font-weight: bold;
+}
+

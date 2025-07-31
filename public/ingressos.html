@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingressos - Sundown Park</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/ingressos.css">
+    <script src="js/ingressos.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav id="menu">
+            <img id="logo-header" src="./assets/imgs/logo_laranja.png" alt="logo-sundown">
+            <ul id="lista-menu">
+                <li><a class="anim-linha" href="/home">Home</a></li>
+                <li class="divisao" >|</li>
+                <li><a class="anim-linha" href="/ingressos">Ingressos</a></li>
+                <li class="divisao" >|</li>
+                <li><a class="anim-linha" href="/atracoes">Atrações</a></li>
+                <li class="divisao" >|</li>
+                <li><a class="anim-linha" href="/calendario">Calendário</a></li>
+                <li class="divisao" >|</li>
+                <li><a class="anim-linha" href="/home#secao-sobre">Sobre nós</a></li>
+                <li class="divisao" >|</li>
+                <div id="app-section">
+                    <p>Baixe nosso App</p>
+                    <div>
+                        <a href="#"><img class="aumentar" src="./assets/icons/apple-store.png" alt=""></a>
+                        <a href="#"><img class="aumentar" src="./assets/icons/google-play.png" alt=""></a>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div id="icons-menu">
+            <a href="/compra"><button id="botao-comprar" type="button">Comprar Ingressos</button></a>
+            <a href=""><img class="aumentar" src="assets/icons/conta.svg" alt=""></a>
+        </div>
+    </header>
+
+    <main>
+        <section id="ingressos">
+            <div class="card-banner">
+                <div class="coluna-imagem"> <img id="img-banner-ingressos" src="./assets/imgs/img-banner-ingresso.png" alt="Ingresso Padrão"></div>
+                <div id="card-banner-dentro" class="coluna-conteudo">
+                    <h2>Cartões de Consumo - Muito mais comodidade para você!</h2>
+                    <p id='desc-banner' class="descricao">
+                            O Cartão de Consumo é o único método de pagamento aceito nos pontos de venda do parque. Curta seu dia sem preocupações! A aquisição do cartão é feita nos pontos de recarga localizados dentro do próprio parque. Você poderá efetuar o depósito em dinheiro, cartão de crédito ou débito.
+                            <br>
+                            Os pontos de venda do parque não aceitam nenhum outro tipo de pagamento além do Cartão de Consumo. Por isso, garanta o seu logo na entrada ou em qualquer ponto de recarga!
+                            <br>
+                            <br>
+                            💡 Dica: Você pode consultar seu saldo a qualquer momento nos próprios pontos de recarga.
+                            <br>
+                            👉 Cartão de Consumo: mais tempo para curtir, menos tempo se preocupando.
+                    </p>
+                    <a href="#sessao-consumo"><button id="botao-ingresso" class="botao-reservar">SAIBA MAIS</button></a>
+                </div>
+            </div>
+
+            <h1><img src="./assets/icons/ticket.svg" alt="Ingressos">Sundown Park</h1>
+
+            <div id="container"></div> <!-- COTAINER QUE VAI SER PREENCHIDO-->
+
+        </section>
+        <section id="sessao-consumo">
+           <div class="card-banner-spec">
+                <div class="coluna-imagem"><img id="imagem-cartoes" src="./assets/imgs/cartao-sem-fundo.png" alt="Ingresso Padrão"></div>
+                <div id="card-banner-dentro" class="coluna-conteudo">
+                    <h2>Cartões de Consumo - Muito mais comodidade para você!</h2>
+                    <p id='desc-banner' class="descricao">
+                        <strong>🎟️ Onde adquirir?</strong>
+                        <br>
+                        Você pode adquirir seu cartão diretamente em nossos pontos de recarga, localizados dentro do próprio parque.
+                        <br>
+                        <strong>💳 Formas de recarga</strong>
+                        <br>
+                        O cartão pode ser carregado de forma prática com dinheiro, cartão de débito ou crédito.
+                        <br>
+                        <strong>🚀 Por que usar?</strong>
+                        <br>
+                        O Cartão de Consumo garante um passeio mais tranquilo, rápido e organizado. Nada de perder tempo em filas, procurar troco ou se preocupar com carteira molhada.
+                    </p>
+                    <div id="chamada">
+                        <p><strong><span style='color: var(--cor-footer)'>Cartão de Consumo: mais tempo curtindo, menos tempo se preocupando!</span></strong></p>
+                        <button id="botao-ingresso" class="botao-reservar">Adquira o Seu</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+            <nav id="nav-rodape">
+                <ol class="lista-pai">  
+                    <ol class="lista-filho"> 
+                        <li class="titulo-lista">Parque</li>
+                        <li><a class="texto-bold" href="/ingressos">Ingressos</a></li> 
+                        <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                        <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                    </ol>
+                    <ol class="lista-filho"> 
+                        <li class="titulo-lista">Conteúdo</li>
+                        <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                    </ol>
+                    <ol class="lista-filho">
+                        <li class="titulo-lista">Dúvidas</li>
+                        <li><a class="texto-bold" href="#">Dúvidas Frequentes</a></li>
+                        <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                        <li><a class="texto-bold" href="#">Como Chegar</a></li> 
+                    </ol>
+                    <ol class="lista-filho">
+                        <li class="titulo-lista">Contato</li>
+                        <li><a class="texto-bold" href="#">Endereço</a></li>
+                        <li><a class="texto-bold" href="#">Trabalhe Conosco</a></li> 
+                        <li><a class="texto-bold" href="#">Seja Fornecedor</a></li>
+                    </ol>
+                </ol>
+                <div>
+                    <img id="logo-footer" src="./assets/imgs/logo_azul.png" alt="logo-sundown">
+                </div>
+            </nav>
+                <div class="linha-horizontal"></div>
+                <div id="div-icones">
+                    <p>Sundown Park - Parque Aquático @ 2025 / Todos os direitos reservados 06.237.380/0001-69</p>
+                    <a class="texto-bold" href="#">Política de Privacidade</a>
+                    <ul id="lista-redes-sociais">
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/insta.png" alt="Instagram"></a></li>
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/face.png" alt="Facebook"></a></li>
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/wpp.png" alt="WhatsApp"></a></li>
+                        <li><a  href="#"><img class="aumentar" src="./assets/icons/youtube.png" alt="Youtube"></a></li>
+                    </ul>
+                </div>
+        </footer>
+</body>
+</html>

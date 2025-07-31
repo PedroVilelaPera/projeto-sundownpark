@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/compra.css">
+
+    <title>Sundown Park - Verão todo dia!</title>
+    <link rel="icon" type="image/png" href="./assets/imgs/logo.png">
+
+    <script src="js/compra.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav id="menu">
+            <img id="logo-header" src="./assets/imgs/logo_laranja.png" alt="logo-sundown">
+        </nav>
+    </header>
+
+    <main>
+        <div class="sec-compra">
+            <div class="ingresso-detalhes">
+                <div class="container-seta">
+                    <a href="/ingressos"><img id="seta" src="./assets/icons/seta.svg" alt="seta de voltar"></a>
+                </div>
+
+                <form class="forms-ingresso">
+                    <fieldset>
+                        <div class="titulo-forms">
+                            <h2>Ingressos</h2>
+                            <p class="tamanho-maior cor-texto">Selecione a quantidade de ingressos que deseja comprar
+                            </p>
+                        </div>
+
+                        <div class="container-quantidade">
+                            <div>
+                                <h2>Adulto</h2>
+                                <p class="tamanho-menor">(Acima de 1,4m)</p>
+                                <h2>R$99,90</h2>
+                                <label for="qtd_adulto">Quantidade: <input class="quantidade" type="number" id="qtd_adulto"
+                                        name="qtd_adulto" min="0" max="100" value="0"></label>
+                            </div>
+                            <div>
+                                <h2>Infantil</h2>
+                                <p>(Acima de 1,4m)</p>
+                                <h2>R$69,90</h2>
+                                <label for="qtd_infantil">Quantidade:<input class="quantidade" type="number" id="qtd_infantil"
+                                        name="qtd_infantil" min="0" max="100" value="0"></label>
+                            </div>
+                        </div>
+
+                        <div class="container-botoes">
+                            <div class="container-botoes-texto">
+                                <h2>Selecione uma Data</h2>
+                                <p class="cor-texto">Selecione a data em que deseja reservar seus ingressos para o
+                                    Sundown Park</p>
+                            </div>
+                            <div class="opcoes-data">
+                                <input type="radio" name="tipo" value="Hoje" id="data-hoje" checked>
+                                <label for="data-hoje">Hoje</label>
+
+                                <input type="radio" name="tipo" value="Amanha" id="data-amanha">
+                                <label for="data-amanha">Amanhã</label>
+
+                                <input type="date" name="tipo" value="2025-07-26" id="data-proximas">
+                            </div>
+                        </div>
+
+                        <div class="div-pagamentos">
+                            <button type="button">Pix</button>
+                            <button type="button">Cartão de Credito</button>
+                        </div>
+                    </fieldset>
+
+            </div>
+
+            <div class="carrinho-detalhes">
+                <div class="carrinho">
+                    <div class="carrinho-topo" id="carrinho-topo">
+                        <h2 class="cor-texto-2">Detalhes do carrinho:</h2>
+                        <img id="lixo-svg" src="./assets/icons/lixeiro.svg" alt="Excluir itens">
+                    </div>
+
+                    <div class="carrinho-dentro">
+                        <div class="container-imagem">
+                            <img id="img-ingresso-format" src="./assets/imgs/ingresso-combo.jpg" alt="imagem-ingresso">
+                            <div class="container-texto" id="container-texto">
+                                <p class="cor-texto tamanho-menor">Sua seleção:</p>
+                                <p class="cor-texto-2 tamanho-maior">Selecione um Ingresso</p>
+                            </div>
+                        </div>
+                        <div class="div-data">
+                            <img id="calendario-compras" src="./assets/icons/calendario-compras.svg" alt="Calendário">
+                            <p class="cor-texto-2"><strong>Hoje, 26 de julho de 2025</strong></p>
+                        </div>
+                        <div id="itens-carrinho">
+                        </div>
+                    </div>
+                </div>
+                <div class="carrinho-valor">
+                    <div id="valor-conteiner">
+                        <h2 class="cor-texto-2" id="texto-preco">Total:</h2>
+                        <h2 class="cor-texto" id="valor"><strong>R$0,00</strong></h2>
+                    </div>
+                    <button class="botao-compra">Comprar</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav id="nav-rodape">
+            <ol class="lista-pai">
+                <ol class="lista-filho">
+                    <li class="titulo-lista">Parque</li>
+                    <li><a class="texto-bold" href="/ingressos">Ingressos</a></li>
+                    <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                    <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                </ol>
+                <ol class="lista-filho">
+                    <li class="titulo-lista">Conteúdo</li>
+                    <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                </ol>
+                <ol class="lista-filho">
+                    <li class="titulo-lista">Dúvidas</li>
+                    <li><a class="texto-bold" href="#">Dúvidas Frequentes</a></li>
+                    <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                    <li><a class="texto-bold" href="#">Como Chegar</a></li>
+                </ol>
+                <ol class="lista-filho">
+                    <li class="titulo-lista">Contato</li>
+                    <li><a class="texto-bold" href="#">Endereço</a></li>
+                    <li><a class="texto-bold" href="#">Trabalhe Conosco</a></li>
+                    <li><a class="texto-bold" href="#">Seja Fornecedor</a></li>
+                </ol>
+            </ol>
+            <div>
+                <img id="logo-footer" src="./assets/imgs/logo_azul.png" alt="logo-sundown">
+            </div>
+        </nav>
+        <container>
+            <div class="linha-horizontal"></div>
+            <div id="div-icones">
+                <p>Sundown Park - Parque Aquático @ 2025 / Todos os direitos reservados 06.237.380/0001-69</p>
+                <a class="texto-bold" href="#">Política de Privacidade</a>
+                <ul id="lista-redes-sociais">
+                    <li><a href="#"><img class="aumentar" src="./assets/icons/insta.png" alt="Instagram"></a></li>
+                    <li><a href="#"><img class="aumentar" src="./assets/icons/face.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img class="aumentar" src="./assets/icons/wpp.png" alt="WhatsApp"></a></li>
+                    <li><a href="#"><img class="aumentar" src="./assets/icons/youtube.png" alt="Youtube"></a></li>
+                </ul>
+            </div>
+        </container>
+    </footer>
+</body>
+
+</html>

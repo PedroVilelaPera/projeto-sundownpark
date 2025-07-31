@@ -1,0 +1,124 @@
+body{
+    background-color: var(--cor-background);
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+
+    z-index: 3;
+
+    height: 90px;
+    width: 100%;
+    background-color: var(--cor-menu);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+#menu{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+#logo-header{
+    height: 60px;
+}
+
+#lista-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;   
+
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#lista-menu li{
+    list-style: none;
+}
+
+.divisao{
+    font-size: 20px;
+    color: white;
+}
+
+#lista-menu li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.anim-linha {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+}
+
+.anim-linha::after {
+    content: "";
+    position:absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+}
+
+.anim-linha:hover::after {
+    width: 100%;
+}
+
+#icons-menu{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#icons-menu img{
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+#app-section{
+    display: flex;
+    align-items: center;
+    gap: 15px;  
+}
+
+#app-section p{
+    color: #fff;
+}
+
+#app-section img{
+    height: 30px;
+}
+
+#botao-comprar{
+    padding: 6px 14px;
+
+    background-color: white;
+    color: var(--cor-menu);
+    border: 2px var(--cor-background) solid;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#botao-comprar:hover{
+    transform: scale(1.01);
+    color: var(--cor-background);
+    background-color: var(--cor-menu);
+    border: 2px var(--cor-background) solid;
+}
+

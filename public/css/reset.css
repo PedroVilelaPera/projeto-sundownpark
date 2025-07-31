@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', 'Arial';
+}
+
+:root{
+    --cor-menu: #ec7600;
+    --cor-background: #f8fced;
+    --cor-footer: #2671db;
+}   
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;  
+}
