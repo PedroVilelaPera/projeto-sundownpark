@@ -33,6 +33,12 @@ function atracoes(req, res) {
     return res.status(200).sendFile(__dirname + "/public/atracoes.html")
 }
 
+async function servirAtracoes(req, res){
+    const db = await dbPromise
+    const dados = await db.all("SELECT * FROM atracoes")
+    return res.status(200).json(dados)
+}
+
 function calendario(req, res) {
     return res.status(200).sendFile(__dirname + "/public/calendario.html")
 }
@@ -45,4 +51,4 @@ function atracaoExemplo(req, res) {
     return res.status(200).sendFile(__dirname + "/public/atracao1.html")
 }
 
-export { home, ingressos, servirIngressos, servirIngressoPorId, atracoes, calendario, compra, atracaoExemplo }
+export { home, ingressos, servirIngressos, servirIngressoPorId, atracoes, servirAtracoes, calendario, compra, atracaoExemplo }

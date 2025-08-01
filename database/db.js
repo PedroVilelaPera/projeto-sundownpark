@@ -2,7 +2,7 @@ import { open } from 'sqlite'
 import sqlite3 from 'sqlite3'
 
 const dbPromise = open({
-    filename: './database/ingressos.db',
+    filename: './database/sundown.db',
     driver: sqlite3.Database
 });
 
@@ -19,6 +19,14 @@ async function criarTabelas() {
             altura TEXT NOT NULL,
             acesso_todas_atracoes INTEGER NOT NULL CHECK (acesso_todas_atracoes IN (0, 1)),
             caminho_img TEXT NOT NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS atracoes (
+            titulo_atracao TEXT NOT NULL,
+            texto_atracao TEXT NOT NULL,
+            caminho_img TEXT NOT NULL,
+            texto_alt TEXT NOT NULL, 
+            caminho_atracao TEXT
         );
     `);
 }
