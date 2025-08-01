@@ -1,7 +1,6 @@
 import {Router} from "express"
 import {
-    home, ingressos, servirIngressos, servirIngressoPorId, atracoes,
-    calendario, compra, atracaoExemplo
+    home, ingressos, servirIngressos, servirIngressoPorId, atracoes, servirAtracoes, calendario, compra, atracaoExemplo
 } from "../controllers/routerController.js"
 
 const router = Router()
@@ -17,5 +16,8 @@ router.get("/atracao1", atracaoExemplo)
 // servir dados para a aplicaçao
 router.get("/api/ingressos", servirIngressos)
 router.get("/api/ingressos/:id", servirIngressoPorId)
+
+router.get("/api/atracoes", servirAtracoes) 
+
 
 export {router}

@@ -1,11 +1,11 @@
- window.addEventListener("load", main)
-    let tipos_ingresso = []
+window.addEventListener("load", main)
 
 async function acessarIngressos() {
         const res = await fetch("/api/ingressos")
         const dado = await res.json()
+        console.log(dado)
         return dado;
-    }
+}
 
 function criarCardIngresso(ingresso) {
 
