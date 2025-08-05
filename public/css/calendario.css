@@ -1,50 +1,128 @@
 main {
     padding: 90px 10px 0px 10px; 
+    display: flex;
+    flex-direction: column;
 }
 
-#calendarioTitulo {
-    justify-self: center;
-    margin: 18px 0px 34px 0px;
+#tiposDeDia {
     display: flex;
-}
-#calendarioTitulo img {
-    height: 38px;
-}
-
-#calendarioTitulo h1 {
-    display: flex;
-    font-size: 28px;
-    align-items: end;
-    color: var(--cor-footer);
+    justify-content: end;
     font-weight: bolder;
+    font-size: 10px;
+    align-self: flex-end;
+    gap: 10px;
+    align-self: center;
+}
+
+#tiposDeDia div {
+    display: flex;
+    align-items: center;
+    
+}
+
+#tiposDeDia img {
+    height: 30px;
+}
+
+#tiposDeDia p {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#aberto {
+    color: var(--cor-menu);
+}
+
+#aconfirmar {
+    color: var(--cor-footer);
 }
 
 #calendario {
     display: flex;
+
     flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    margin: 0px 0px 75px 0px;
+
+    gap: 20px;
+    margin: 20px 0px 50px 0px;
 }
 
-.calendarioAviso {
-    min-width: 203px;
+#avisoP1 {
+    font-size: 28px;
+    color: var(--cor-background);
+    text-shadow: 
+    -2px -2px 0 var(--cor-menu),
+    2px -2px 0 var(--cor-menu),
+    -2px  2px 0 var(--cor-menu),
+    2px  2px 0 var(--cor-menu);
+    
+}
+
+#avisoP2 {
+    color: var(--cor-background);
+    text-shadow: 
+    -1px -1px 0 var(--cor-menu),
+    1px -1px 0 var(--cor-menu),
+    -1px  1px 0 var(--cor-menu),
+    1px  1px 0 var(--cor-menu);
+    margin: 5px 0px;
+}
+
+#avisoP3 {
+    font-size: 24px;
+    color: var(--cor-background);
+    text-shadow: 
+    -2px -2px 0 var(--cor-menu),
+    2px -2px 0 var(--cor-menu),
+    -2px  2px 0 var(--cor-menu),
+    2px  2px 0 var(--cor-menu);
+}
+
+
+#avisoP4 {
     display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.avisoP {
+    font-size: 10px;
+    color: var(--cor-background);
+    text-shadow: 
+    -1px -1px 0 var(--cor-menu),
+    1px -1px 0 var(--cor-menu),
+    -1px  1px 0 var(--cor-menu),
+    1px  1px 0 var(--cor-menu);
+}
+
+
+#calendarioAviso {
+    min-width: 203px;
+    max-width: 203px;
+
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
+    color: var(--cor-menu);
+    text-align: center;
+    font-weight: bolder;
+    align-self: center;
 }
 
 .calendarioAno {
     display: flex;
     flex-direction: column;
-    gap: 4px;
 }
 .anoP {
     font-size: 18px;
     font-weight: bolder;
     display: flex;
 
-    height: 29px;
+    height: 274px;
+    width: 29px;
 
     align-items: center;
     justify-content: center;
@@ -53,10 +131,16 @@ main {
     color: var(--cor-background);
     background-color: var(--cor-footer);
     border-radius: 5px;
+
+    margin-bottom: -274px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
 }
 
 .calendarioMeses {
     display: flex;
+    flex-wrap: wrap;
+    align-self: center;
     gap: 20px;
 }
 
@@ -64,7 +148,9 @@ main {
     background-color: var(--cor-background);
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     width: 203px;
+    height: 207px;
 }
 
 .calendarioDia {
@@ -98,9 +184,11 @@ main {
     background-color: var(--cor-menu);
     font-weight: bolder;
     height: 29px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: flex-start;
     border-radius: 5px ;
 }
 
@@ -111,4 +199,17 @@ main {
     display: flex;
     border-radius: 5px ;
     margin-bottom: 4px;
+}
+
+.calendarioDatasEspeciais {
+    width: 203px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    margin: 4px 0px 0px 0px;
+}
+
+.calendarioAvisoDeTemporada {
+        color: var(--cor-menu);
 }

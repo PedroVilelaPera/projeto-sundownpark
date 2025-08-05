@@ -6,7 +6,6 @@ async function acessarIngressos() {
         console.log(dado)
         return dado;
 }
-
 function criarCardIngresso(ingresso) {
 
     let acessoDino = '';
@@ -18,7 +17,7 @@ function criarCardIngresso(ingresso) {
         acessoDino = '<li class="check">Acesso às atrações do Reino dos Dinossauros.</li>';
     }
 
-    const precoFormatado = ingresso.preco.toFixed(2).replace('.', ',');
+    const precoFormatado = ingresso.precoInfantil.toFixed(2).replace('.', ',');
 
     return `
         <div class="card-encontro">
