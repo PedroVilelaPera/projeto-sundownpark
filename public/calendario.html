@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 
     <head>
-        
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="/js/calendario.js"></script>
+        <script src="./js/calendario.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,15 +28,15 @@
                 <nav id="menu">
                     <img id="logo-header" src="./assets/imgs/logo_laranja.png" alt="logo-sundown">
                     <ul id="lista-menu">
-                        <li><a class="anim-linha" href="/home">Home</a></li>
+                        <li><a class="anim-linha" href="home.html">Home</a></li>
                         <li class="divisao" >|</li>
-                        <li><a class="anim-linha" href="/ingressos">Ingressos</a></li>
+                        <li><a class="anim-linha" href="ingressos.html">Ingressos</a></li>
                         <li class="divisao" >|</li>
-                        <li><a class="anim-linha" href="/atracoes">Atrações</a></li>
+                        <li><a class="anim-linha" href="atracoes.html">Atrações</a></li>
                         <li class="divisao" >|</li>
-                        <li><a class="anim-linha" href="/calendario">Calendário</a></li>
+                        <li><a class="anim-linha" href="calendario.html">Calendário</a></li>
                         <li class="divisao" >|</li>
-                        <li><a class="anim-linha" href="/home#secao-sobre">Sobre nós</a></li>
+                        <li><a class="anim-linha" href="home.html#secao-sobre">Sobre nós</a></li>
                         <li class="divisao" >|</li>
                         <div id="app-section">
                             <p>Baixe nosso App</p>
@@ -48,18 +48,26 @@
                     </ul>
                 </nav>
                 <div id="icons-menu">
-                    <a href="./compra"><button id="botao-comprar" type="button">Comprar Ingressos</button></a>
+                    <a href="./compra.html"><button id="botao-comprar" type="button">Comprar Ingressos</button></a>
                     <a href=""><img class="aumentar" src="assets/icons/conta.svg" alt=""></a>
                 </div>
         </header>
 
         <main>
-            <div id="calendarioTitulo">
-                <img src="./assets/icons/calendario.svg" alt="">
-                <h1 id="calendarioH1"> CALENDÁRIO </h1>
-                
+
+            <div id="calendario">
+                <div id="tiposDeDia">
+                    <div id="aberto">
+                        <img src="./assets/icons/circulo_laranja.svg" alt="">
+                        <p>Parque Aberto</p>
+                    </div>
+                    <div id="aconfirmar">
+                        <img src="./assets/icons/circulo_azul.svg" alt="">
+                        <p>À Confirmar</p>
+                    </div>
+                </div>
             </div>
-            <div id="calendario"></div>
+
         </main>
 
         <footer>
@@ -67,18 +75,18 @@
                 <ol class="lista-pai">  
                     <ol class="lista-filho"> 
                         <li class="titulo-lista">Parque</li>
-                        <li><a class="texto-bold" href="/ingressos">Ingressos</a></li> 
-                        <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
-                        <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                        <li><a class="texto-bold" href="ingressos.html">Ingressos</a></li> 
+                        <li><a class="texto-bold" href="atracoes.html">Atrações</a></li>
+                        <li><a class="texto-bold" href="calendario.html">Calendário</a></li>
                     </ol>
                     <ol class="lista-filho"> 
                         <li class="titulo-lista">Conteúdo</li>
-                        <li><a class="texto-bold" href="/atracoes">Atrações</a></li>
+                        <li><a class="texto-bold" href="atracoes.html">Atrações</a></li>
                     </ol>
                     <ol class="lista-filho">
                         <li class="titulo-lista">Dúvidas</li>
                         <li><a class="texto-bold" href="#">Dúvidas Frequentes</a></li>
-                        <li><a class="texto-bold" href="/calendario">Calendário</a></li>
+                        <li><a class="texto-bold" href="calendario.html">Calendário</a></li>
                         <li><a class="texto-bold" href="#">Como Chegar</a></li> 
                     </ol>
                     <ol class="lista-filho"> 

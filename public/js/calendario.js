@@ -1,156 +1,189 @@
 window.addEventListener("load", main)
 
-let calendario = {
-    "2 0 2 5" : {
-        "Setembro" : {
-            "totalDeDias" : 30,
-            "diaDaSemanaQueComeca" : "segunda",
-            "diasAbertos" : [6,7,13,14,20,21,27,28], 
-            "diasAConfirmarAbertura" : []
-        },
-        "Outubro" : {
-            "totalDeDias" : 31,
-            "diaDaSemanaQueComeca" : "quarta",
-            "diasAbertos" : [4,5,10,11,12,17,18,19,25,26], 
-            "diasAConfirmarAbertura" : []
-        },
-        "Novembro" : {
-            "totalDeDias" : 30,
-            "diaDaSemanaQueComeca" : "sabado",
-            "diasAbertos" : [1,2,8,9,14,15,16,20,21,22,23,29,30], 
-            "diasAConfirmarAbertura" : []
-        },
-        "Dezembro" : {
-            "totalDeDias" : 31,
-            "diaDaSemanaQueComeca" : "segunda",
-            "diasAbertos" : [6,7,12,13,14,20,21,25,26,27,28], 
-            "diasAConfirmarAbertura" : []
-        }
-    },
-    "2 0 2 6" : {
-        "Janeiro" : {
-            "totalDeDias" : 31,
-            "diaDaSemanaQueComeca" : "quinta",
-            "diasAbertos" : [1,2,3,4,9,10,11,16,17,18,23,24,25,30,31], 
-            "diasAConfirmarAbertura" : [8]
-        },
-        "Fevereiro" : {
-            "totalDeDias" : 28,
-            "diaDaSemanaQueComeca" : "domingo",
-            "diasAbertos" : [1,7,8,14,15,16,17,21,22,28], 
-            "diasAConfirmarAbertura" : []
-        },
-        "Março" : {
-            "totalDeDias" : 31,
-            "diaDaSemanaQueComeca" : "domingo",
-            "diasAbertos" : [1,7,8,14,15,21,22,28,29], 
-            "diasAConfirmarAbertura" : []
-        },
-        "Abril" : {
-            "totalDeDias" : 30,
-            "diaDaSemanaQueComeca" : "quarta",
-            "diasAbertos" : [5,12,19,21,26], 
-            "diasAConfirmarAbertura" : [4,11,18,25]
-        },
-        "Maio" : {
-            "totalDeDias" : 31,
-            "diaDaSemanaQueComeca" : "sexta",
-            "diasAbertos" : [1,3], 
-            "diasAConfirmarAbertura" : [2]
-        }
-    } 
+async function acessarCalendario() {
+        const res = await fetch("/api/calendario")
+        const dado = await res.json()
+        console.log(dado)
+        return dado;
 }
 
-let diasDaSemana = ["domingo","segunda","terça","quarta","quinta","sexta","sabado"]
+const diasDaSemana = ["domingo","segunda","terça","quarta","quinta","sexta","sabado"]
 
-function main() {
+async function main() {
     
-    const divCalendario = document.getElementById("calendario")
-    let primeiroElemento = true
+    const objCalendario = await acessarCalendario()
+    const calendario = document.getElementById("calendario")
 
-    for (const i in calendario) {
+    // Adiciona os Anos
+
+    for (const ano in objCalendario) {
 
         const anoD = document.createElement("div")
+        anoD.classList = "calendarioAno"
+
         const anoP = document.createElement("p")
-        const dMeses = document.createElement("div")
+        anoP.classList = "anoP"
+        anoP.textContent = ano.split("").join(" ")
+
+        const mesesD = document.createElement("div")
+        mesesD.classList = "calendarioMeses"
 
         anoD.appendChild(anoP)
-        divCalendario.appendChild(anoD)
+        calendario.appendChild(anoD)
 
-        if (primeiroElemento) {
-            const dAviso = document.createElement("div")
-            const pAviso = document.createElement("p")
-            dAviso.classList = "calendarioAviso"
-            pAviso.textContent = "texto"
-            dAviso.appendChild(pAviso)
-            dMeses.appendChild(dAviso)
-            primeiroElemento = false
+        // Adiciona o Aviso de Reabertura
+
+        if (calendario.children.length === 2 && anoD.children.length === 1) {
+
+            const primeiroAno = Object.keys(objCalendario)[0]
+            const primeiroMes = Object.keys(objCalendario[primeiroAno])[0]
+            const primeiroDia = objCalendario[primeiroAno][primeiroMes].diasAbertos[0]
+
+            const criarP = (id, texto) => {
+                const p = document.createElement("p")
+                p.id = id
+                p.textContent = texto
+                return p
+            }
+
+            const avisoD = document.createElement("div")
+            avisoD.id = "calendarioAviso"
+
+            const avisoP1 = criarP("avisoP1", "TEMPORADA ENCERRADA!")
+            const avisoP2 = criarP("avisoP2", "Voltamos em")
+            const avisoP3 = criarP(
+                "avisoP3",
+                (primeiroDia < 10 ? "0" + primeiroDia : primeiroDia) + " de " + primeiroMes
+            )
+
+            const avisoP4D = document.createElement("div")
+            avisoP4D.id = "avisoP4"
+
+            const avisoP4D1 = document.createElement("p")
+            avisoP4D1.classList = "avisoP"
+            avisoP4D1.textContent = objCalendario[primeiroAno][primeiroMes].diaDaSemanaQueComeca
+
+            const avisoP4D2 = document.createElement("p")
+            avisoP4D2.classList = "avisoP"
+            avisoP4D2.textContent = primeiroAno
+
+            avisoP4D.append(avisoP4D1, avisoP4D2)
+
+            avisoD.append(avisoP1, avisoP2, avisoP3, avisoP4D)
+            mesesD.appendChild(avisoD)
         }
 
-        anoD.classList = "calendarioAno"
-        dMeses.classList = "calendarioMeses"
-        anoP.classList = "anoP"
-        anoP.textContent = i
+        // Adiciona os Meses
 
-        for (const j in calendario[i]) {
-            const dMes = document.createElement("div")
-            const dDias = document.createElement("div")
-            const mes = document.createElement("p")
+        for (const mes in objCalendario[ano]) {
 
-            dMes.classList = "calendarioMes"
-            dDias.classList = "calendarioDias"
-            mes.classList = "mesP"
-            mes.textContent = j.toUpperCase()
+            const mesD = document.createElement("div")
+            mesD.classList = "calendarioMes"
+
+            const mesP = document.createElement("p")
+            mesP.classList = "mesP"
+            mesP.textContent = mes.toUpperCase()
+
+            const diasD = document.createElement("div")
+            diasD.classList = "calendarioDias"
             
-            const totalDeDias = calendario[i][j].totalDeDias
-            const diaDaSemanaQueComeca = calendario[i][j].diaDaSemanaQueComeca
-            const diasAbertos = calendario[i][j].diasAbertos
-            const diasAConfirmarAbertura = calendario[i][j].diasAConfirmarAbertura
+            // Armazena as Informações do Mês
 
-            const diasDaSemanaDiv = document.createElement("div")   
-            diasDaSemanaDiv.classList = "diasDaSemana"
+            const totalDeDias = objCalendario[ano][mes].totalDeDias
+            const diaDaSemanaQueComeca = objCalendario[ano][mes].diaDaSemanaQueComeca
+            const diasAbertos = objCalendario[ano][mes].diasAbertos
+            const diasAConfirmarAbertura = objCalendario[ano][mes].diasAConfirmarAbertura
+            const datasEspeciais = objCalendario[ano][mes].datasEspeciais
 
-            for (const s in ["D","S","T","Q","Q","S","S"]) {
+            // Adiciona os Dias na Semana nos Meses
+
+            const diasDaSemanaD = document.createElement("div")   
+            diasDaSemanaD.classList = "diasDaSemana"
+            
+            for (let i = 0; i < diasDaSemana.length; i++) {
                 
-                const vazio = document.createElement("p")
+                const diaDaSemanaP = document.createElement("p")
+                diaDaSemanaP.classList = "calendarioDia"
 
-                
-                vazio.classList = "calendarioDia"
-                vazio.textContent = ["D","S","T","Q","Q","S","S"][s]
+                diaDaSemanaP.textContent = diasDaSemana[i][0].toUpperCase()
 
-                diasDaSemanaDiv.appendChild(vazio)
-                
+                diasDaSemanaD.appendChild(diaDaSemanaP)
             }
 
-            dDias.appendChild(diasDaSemanaDiv)
+            diasD.appendChild(diasDaSemanaD)
 
-            for (const k in diasDaSemana) {
-                if (diasDaSemana[k] === diaDaSemanaQueComeca){
-                    break
-                }
-                const vazio = document.createElement("p")
-                vazio.classList = "calendarioDia"
-                vazio.textContent = ""
-                dDias.appendChild(vazio)
+            // Adiciona Espaços Vazios no Calendario
+
+            for (const diaDaSemana of diasDaSemana) {
+
+                if (diaDaSemana === diaDaSemanaQueComeca){ break }
+
+                const espacoVazioP = document.createElement("p")
+                espacoVazioP.classList = "calendarioDia"
+                espacoVazioP.textContent = ""
+                diasD.appendChild(espacoVazioP)
             }
 
-            for (let h = 1; h < totalDeDias+1; h++) {
-                const dia = document.createElement("p")
-                dia.classList = "calendarioDia"
-                if (diasAbertos.includes(h)) {
-                    dia.classList.add("aberto")
-                }
-                if (diasAConfirmarAbertura.includes(h)) {
-                    dia.classList.add("aConfirmar")
-                }
-                dia.textContent = h
-                dDias.appendChild(dia)
+            // Adiciona os Dias dos Mês
+
+            for (let dia = 1; dia < totalDeDias+1; dia++) {
+
+                const diaP = document.createElement("p")
+                diaP.classList = "calendarioDia"
+
+                if (diasAbertos.includes(dia)) { diaP.classList.add("aberto") }
+
+                if (diasAConfirmarAbertura.includes(dia)) { diaP.classList.add("aConfirmar") }
+
+                diaP.textContent = dia
+                diasD.appendChild(diaP)
             }
 
-            dMes.appendChild(mes)
-            dMes.appendChild(dDias)
-            dMeses.appendChild(dMes)
-            anoD.appendChild(dMeses)
+            // Adiciona Mensagens de Datas Especiais
+
+            const datasEspeciaisD = document.createElement("div")
+            datasEspeciaisD.classList = "calendarioDatasEspeciais"
+
+            if (Object.keys(objCalendario)[0] === ano && Object.keys(objCalendario[Object.keys(objCalendario)[0]])[0] === mes) {
+
+                const dataEspecialP = document.createElement("p")
+                dataEspecialP.classList = "calendarioAvisoDeTemporada"
+
+                dataEspecialP.textContent = (diasAbertos[0] < 10 ? "0" + diasAbertos[0] : diasAbertos[0]) + " - Abertura da nova temporada"
+
+                datasEspeciaisD.appendChild(dataEspecialP)
+            }
+
+            for (const dataEspecial of datasEspeciais) {
+                
+                const dataEspecialP = document.createElement("p")
+
+                dataEspecialP.textContent = dataEspecial
+
+                datasEspeciaisD.appendChild(dataEspecialP)
+            }
+
+            if (Object.keys(objCalendario)[Object.keys(objCalendario).length - 1] === ano && Object.keys(objCalendario[Object.keys(objCalendario)[Object.keys(objCalendario).length - 1]])[Object.keys(objCalendario[Object.keys(objCalendario)[Object.keys(objCalendario).length - 1]]).length - 1] === mes) {
+
+                const dataEspecialP = document.createElement("p")
+                dataEspecialP.classList = "calendarioAvisoDeTemporada"
+
+                let ultimoDia = diasAbertos[diasAbertos.length - 1]
+                if (ultimoDia > diasAConfirmarAbertura[diasAbertos.length - 1]) {
+                    ultimoDia = diasAConfirmarAbertura[diasAbertos.length - 1]
+                }
+                dataEspecialP.textContent = (ultimoDia < 10 ? "0" + ultimoDia : ultimoDia) + " - Encerramento de temporada"
+
+                datasEspeciaisD.appendChild(dataEspecialP)
+            }
+
+            // Adiciona os Meses ao Ano
+
+            mesD.appendChild(mesP)
+            mesD.appendChild(diasD)
+            mesD.appendChild(datasEspeciaisD)
+            mesesD.appendChild(mesD)
+            anoD.appendChild(mesesD)
         } 
     }
 }
