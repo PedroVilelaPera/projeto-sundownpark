@@ -51,6 +51,11 @@ main{
     height: 300px;
 }
 
+.formatar-img-ingressos-home{
+  height: 67%;
+  width: 100%;
+}
+
 .texto-produto{
     display: flex;
     justify-content: space-around;
